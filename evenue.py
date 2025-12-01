@@ -1,5 +1,6 @@
-# Based on tutorial on TKinter at codemy.com and 
+# Based on tutorial on TKinter at codemy.com at
 # https://www.youtube.com/playlist?list=PLCC34OHNcOtoC6GglhF3ncJ5rLwQrLGnV
+# and contributions from Microsoft's Copilot
 
 # Import everything from tkinter
 from tkinter import *
@@ -11,7 +12,7 @@ from PIL import ImageTk,Image
 root = Tk()
 
 #Title the Main App Interface
-root.title('Evenue')
+root.title('EVENUE')
 root.iconbitmap('thumbnail_PNG_image.ico')
 
 # Set a phone-like window size and prevent arbitrary resizing for predictable layout
@@ -46,11 +47,41 @@ def login():
     import login
     login.entry()
 
+ # for vertical buttons simple placeholder: show a popup
 def events():
-    # simple placeholder: show a popup
     top = Toplevel(root)
-    top.title("Events")
+    top.title("Attendables")
     Label(top, text="A page that shows events.").pack(padx=10, pady=10)
+
+def tickets():
+    top = Toplevel(root)
+    top.title("Valuables")
+    Label(top, text="A page that shows purchases including tickets and receipts for items purchased in 'Buyables'.").pack(padx=10, pady=10)
+
+def merch():
+    top = Toplevel(root)
+    top.title("Buyables")
+    Label(top, text="A page that shows products for sale.").pack(padx=10, pady=10)
+
+def sm():
+    top = Toplevel(root)
+    top.title("Shareables")
+    Label(top, text="A page that shows pics and vids 'attendabled' recently at the venue.").pack(padx=10, pady=10)
+
+def wallpapers():
+    top = Toplevel(root)
+    top.title("Saveables")
+    Label(top, text="A page that allows venue related images to become personally usable.").pack(padx=10, pady=10)
+
+def sos():
+    top = Toplevel(root)
+    top.title("Capables")
+    Label(top, text="A page that connects users to 'capables,' or, sources of help and commonly asked questions, an AI-powered answer bot, and a place for expressing irritables.").pack(padx=10, pady=10)
+
+def vvmap():
+    top = Toplevel(root)
+    top.title("Navigables")
+    Label(top, text="A virtual map that makes the venue navigable to users whether they are at home or inside of the venue.").pack(padx=10, pady=10)
 
 # Header: centered title and login button at top-right
 # Use a Canvas so the image fills the entire window and we can draw text on top
@@ -108,26 +139,26 @@ def make_text_button(x, y, text, callback=None, font_size=14, anchor='w'):
     return item
 
 # Title centered at top
-make_text_button(PHONE_WIDTH//2, 24, "Evenue", callback=None, font_size=18, anchor='center')
+make_text_button(PHONE_WIDTH//2, 24, "EVENUE", callback=None, font_size=18, anchor='center')
 
 # Login text at top-right
 def _open_login():
     login()
 
-make_text_button(PHONE_WIDTH-12, 24, "Login", callback=_open_login, font_size=12, anchor='e')
+make_text_button(PHONE_WIDTH-12, 24, "Accountable", callback=_open_login, font_size=12, anchor='e')
 
 # Vertical menu: place items from near leftmost to roughly middle vertically
 left_x = 16
 start_y = 120
 step_y = 44
 vertical_items = [
-    ("Events", events),
-    ("Tickets", None),
-    ("Highlights", None),
-    ("Merchandise", None),
-    ("Wallpapers", None),
-    ("Contact", None),
-    ("Map", None),
+    ("Attendables", events),
+    ("Valuables", tickets),
+    ("Buyables", merch),
+    ("Shareables", sm),
+    ("Saveables", wallpapers),
+    ("Capables", sos),
+    ("Navigables", vvmap),
 ]
 
 for i, (txt, cb) in enumerate(vertical_items):
