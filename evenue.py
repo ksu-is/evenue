@@ -16,9 +16,9 @@ root.title('EVENUE')
 root.iconbitmap('thumbnail_PNG_image.ico')
 
 # Set a phone-like window size and prevent arbitrary resizing for predictable layout
-PHONE_WIDTH = 360
+PHONE_WIDTH = 300
 # reduce overall height per request
-PHONE_HEIGHT = 640
+PHONE_HEIGHT = 540
 root.geometry(f"{PHONE_WIDTH}x{PHONE_HEIGHT}")
 root.resizable(False, False)
 
@@ -51,37 +51,37 @@ def login():
 def events():
     top = Toplevel(root)
     top.title("Attendables")
-    Label(top, text="A page that shows events.").pack(padx=10, pady=10)
+    Label(top, text="Attendables\nA page that shows events.").pack(padx=10, pady=10)
 
 def tickets():
     top = Toplevel(root)
     top.title("Valuables")
-    Label(top, text="A page that shows purchases including tickets and receipts for items purchased in 'Buyables'.").pack(padx=10, pady=10)
+    Label(top, text="Valuables\nA page that shows purchases including tickets and receipts for items purchased in 'Buyables'.").pack(padx=10, pady=10)
 
 def merch():
     top = Toplevel(root)
     top.title("Buyables")
-    Label(top, text="A page that shows products for sale.").pack(padx=10, pady=10)
+    Label(top, text="Buyables\nA page that shows products for sale.").pack(padx=10, pady=10)
 
 def sm():
     top = Toplevel(root)
     top.title("Shareables")
-    Label(top, text="A page that shows pics and vids 'attendabled' recently at the venue.").pack(padx=10, pady=10)
+    Label(top, text="Shareables\nA page that shows pics and vids 'attendabled' recently at the venue.").pack(padx=10, pady=10)
 
 def wallpapers():
     top = Toplevel(root)
     top.title("Saveables")
-    Label(top, text="A page that allows venue related images to become personally usable.").pack(padx=10, pady=10)
+    Label(top, text="Saveables\nA page that allows venue related images to become personally usable.").pack(padx=10, pady=10)
 
 def sos():
     top = Toplevel(root)
     top.title("Capables")
-    Label(top, text="A page that connects users to 'capables,' or, sources of help and commonly asked questions, an AI-powered answer bot, and a place for expressing irritables.").pack(padx=10, pady=10)
+    Label(top, text="Capables\nA page that connects users to 'capables,' or, sources of help and commonly asked questions, an AI-powered answer bot, and a place for expressing irritables.").pack(padx=10, pady=10)
 
 def vvmap():
     top = Toplevel(root)
     top.title("Navigables")
-    Label(top, text="A virtual map that makes the venue navigable to users whether they are at home or inside of the venue.").pack(padx=10, pady=10)
+    Label(top, text="Navigables\nA virtual map that makes the venue navigable to users whether they are at home or inside of the venue.").pack(padx=10, pady=10)
 
 # Header: centered title and login button at top-right
 # Use a Canvas so the image fills the entire window and we can draw text on top
@@ -145,7 +145,7 @@ make_text_button(PHONE_WIDTH//2, 24, "EVENUE", callback=None, font_size=18, anch
 def _open_login():
     login()
 
-make_text_button(PHONE_WIDTH-12, 24, "Accountable", callback=_open_login, font_size=12, anchor='e')
+make_text_button(PHONE_WIDTH-12, 24, "Accountable", callback=_open_login, font_size=10, anchor='e')
 
 # Vertical menu: place items from near leftmost to roughly middle vertically
 left_x = 16
